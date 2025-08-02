@@ -65,13 +65,8 @@
   - [Declarations](#declarations)
     - [Variable declarations](#variable-declarations)
     - [Default initialization](#default-initialization)
-  - [Classes](#classes)
-  - [Overloading](#overloading)
-  - [Templates](#templates)
   - [Exception handling](#exception-handling)
     - [Error statement](#error-statement)
-  - [Preprocessing](#preprocessing)
-  - [Library](#library)
   - [Language support library](#language-support-library)
     - [Program entry point](#program-entry-point)
     - [Built-in operations](#built-in-operations)
@@ -79,7 +74,6 @@
       - [Increment](#increment)
   - [Diagnostics library](#diagnostics-library)
     - [Error reporting](#error-reporting)
-  - [General utilities library](#general-utilities-library)
   - [Strings library](#strings-library)
     - [String operations](#string-operations)
       - [Concatenation](#concatenation)
@@ -88,8 +82,6 @@
       - [Array declaration](#array-declaration)
       - [Array access](#array-access)
       - [Array assignment](#array-assignment)
-  - [Iterators library](#iterators-library)
-  - [Algorithms library](#algorithms-library)
   - [Numerics library](#numerics-library)
     - [Arithmetic operations](#arithmetic-operations)
       - [Addition (`+`)](#addition-)
@@ -101,10 +93,6 @@
       - [PRAISE\_LEADER](#praise_leader)
     - [Input operations](#input-operations)
       - [PLEASE READ](#please-read)
-  - [Filesystem library](#filesystem-library)
-  - [Regular expressions library](#regular-expressions-library)
-  - [Atomic operations library](#atomic-operations-library)
-  - [Thread support library](#thread-support-library)
   - [Implementation limits](#implementation-limits)
   - [Conformance requirements](#conformance-requirements)
   - [Bibliography](#bibliography)
@@ -796,24 +784,6 @@ Variables are initialized according to their type:
 
 ---
 
-## Classes
-
-Gov does not support user-defined classes or structures.
-
----
-
-## Overloading
-
-Gov does not support function or operator overloading.
-
----
-
-## Templates
-
-Gov does not support templates or generic programming constructs.
-
----
-
 ## Exception handling
 
 Gov provides limited error handling through the `DENOUNCE_IMPERIALIST_ERRORS` statement.
@@ -839,18 +809,6 @@ IF divisor EQUALS 0 THEN
     DENOUNCE_IMPERIALIST_ERRORS "Division by zero error"
 END_IF
 ```
-
----
-
-## Preprocessing
-
-Gov does not support preprocessing directives.
-
----
-
-## Library
-
-The Gov standard library consists of built-in language facilities. No separate library headers are required.
 
 ---
 
@@ -921,12 +879,6 @@ DENOUNCE_IMPERIALIST_ERRORS "error message"
 
 ---
 
-## General utilities library
-
-Gov does not provide general utility functions in the current specification.
-
----
-
 ## Strings library
 
 ### String operations
@@ -988,18 +940,6 @@ PLEASE SET array_name[index] TO value
 
 - Value must be string type or convertible to string
 - Index must be valid array index
-
----
-
-## Iterators library
-
-Gov does not provide iterator abstractions.
-
----
-
-## Algorithms library
-
-Gov does not provide algorithm functions.
 
 ---
 
@@ -1107,30 +1047,6 @@ PLEASE READ age
 PRAISE_LEADER "Enter name:"
 PLEASE READ name
 ```
-
----
-
-## Filesystem library
-
-Gov does not provide filesystem operations.
-
----
-
-## Regular expressions library
-
-Gov does not provide regular expression support.
-
----
-
-## Atomic operations library
-
-Gov does not provide atomic operations.
-
----
-
-## Thread support library
-
-Gov does not provide threading support.
 
 ---
 
