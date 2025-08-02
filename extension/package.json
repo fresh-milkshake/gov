@@ -1,0 +1,34 @@
+{
+  "name": "gov-language-support",
+  "displayName": "Gov Language Support",
+  "description": "Syntax highlighting for the Gov programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "gov",
+        "aliases": [
+          "Gov",
+          "gov"
+        ],
+        "extensions": [
+          ".gov"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gov",
+        "scopeName": "source.gov",
+        "path": "./syntaxes/gov.tmLanguage.json"
+      }
+    ]
+  }
+}

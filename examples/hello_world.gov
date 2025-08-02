@@ -1,0 +1,15 @@
+!I_LOVE_GOVERNMENT
+
+PRAISE_LEADER "Hello, World!"
+
+OBEY_PARTY_LINE "All variables must be declared in honor of the Supreme Leader"
+PLEASE DECLARE_VARIABLE "GloriousCounter" AS INTEGER
+PLEASE SET GloriousCounter TO 0
+
+FOR_THE_PEOPLE GloriousCounter LESS_THAN 3 DO
+    PRAISE_LEADER "Long live the Supreme Leader!"
+    PLEASE INCREMENT GloriousCounter BY 1
+END_FOR_THE_PEOPLE
+
+DENOUNCE_IMPERIALIST_ERRORS "Segmentation fault is a capitalist lie."
+

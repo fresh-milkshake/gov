@@ -1,0 +1,70 @@
+!I_LOVE_GOVERNMENT
+
+PRAISE_LEADER "Welcome to Glorious Tic Tac Toe!"
+
+OBEY_PARTY_LINE "All variables must be declared in honor of the Supreme Leader"
+PLEASE DECLARE_VARIABLE "Board" AS ARRAY_OF_STRING SIZE 9
+PLEASE DECLARE_VARIABLE "CurrentPlayer" AS STRING
+PLEASE DECLARE_VARIABLE "Move" AS INTEGER
+PLEASE DECLARE_VARIABLE "Winner" AS STRING
+PLEASE DECLARE_VARIABLE "TurnCount" AS INTEGER
+
+// Initialize the board
+FOR_THE_PEOPLE TurnCount LESS_THAN 9 DO
+    PLEASE SET Board[TurnCount] TO " "
+    PLEASE INCREMENT TurnCount BY 1
+END_FOR_THE_PEOPLE
+
+PLEASE SET CurrentPlayer TO "X"
+PLEASE SET Winner TO ""
+PLEASE SET TurnCount TO 0
+
+WHILE Winner EQUALS "" AND TurnCount LESS_THAN 9 DO
+    PRAISE_LEADER "Current Board:"
+    PRAISE_LEADER Board[0] + "|" + Board[1] + "|" + Board[2]
+    PRAISE_LEADER "-+-+-"
+    PRAISE_LEADER Board[3] + "|" + Board[4] + "|" + Board[5]
+    PRAISE_LEADER "-+-+-"
+    PRAISE_LEADER Board[6] + "|" + Board[7] + "|" + Board[8]
+
+    PRAISE_LEADER "Comrade " + CurrentPlayer + ", enter your move (0-8):"
+    PLEASE READ Move
+
+    IF Board[Move] EQUALS " " THEN
+        PLEASE SET Board[Move] TO CurrentPlayer
+        PLEASE INCREMENT TurnCount BY 1
+
+        // Check for victory
+        IF (Board[0] EQUALS CurrentPlayer AND Board[1] EQUALS CurrentPlayer AND Board[2] EQUALS CurrentPlayer) OR
+           (Board[3] EQUALS CurrentPlayer AND Board[4] EQUALS CurrentPlayer AND Board[5] EQUALS CurrentPlayer) OR
+           (Board[6] EQUALS CurrentPlayer AND Board[7] EQUALS CurrentPlayer AND Board[8] EQUALS CurrentPlayer) OR
+           (Board[0] EQUALS CurrentPlayer AND Board[3] EQUALS CurrentPlayer AND Board[6] EQUALS CurrentPlayer) OR
+           (Board[1] EQUALS CurrentPlayer AND Board[4] EQUALS CurrentPlayer AND Board[7] EQUALS CurrentPlayer) OR
+           (Board[2] EQUALS CurrentPlayer AND Board[5] EQUALS CurrentPlayer AND Board[8] EQUALS CurrentPlayer) OR
+           (Board[0] EQUALS CurrentPlayer AND Board[4] EQUALS CurrentPlayer AND Board[8] EQUALS CurrentPlayer) OR
+           (Board[2] EQUALS CurrentPlayer AND Board[4] EQUALS CurrentPlayer AND Board[6] EQUALS CurrentPlayer) THEN
+            PLEASE SET Winner TO CurrentPlayer
+        ELSE
+            IF CurrentPlayer EQUALS "X" THEN
+                PLEASE SET CurrentPlayer TO "O"
+            ELSE
+                PLEASE SET CurrentPlayer TO "X"
+            END_IF
+        END_IF
+    ELSE
+        PRAISE_LEADER "That square is already occupied by the will of the people. Try again."
+    END_IF
+END_WHILE
+
+PRAISE_LEADER "Final Board:"
+PRAISE_LEADER Board[0] + "|" + Board[1] + "|" + Board[2]
+PRAISE_LEADER "-+-+-"
+PRAISE_LEADER Board[3] + "|" + Board[4] + "|" + Board[5]
+PRAISE_LEADER "-+-+-"
+PRAISE_LEADER Board[6] + "|" + Board[7] + "|" + Board[8]
+
+IF Winner NOT_EQUALS "" THEN
+    PRAISE_LEADER "Comrade " + Winner + " is victorious!"
+ELSE
+    PRAISE_LEADER "The game ends in a glorious draw!"
+END_IF

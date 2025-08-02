@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Gov",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#identifiers"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.gov",
+          "begin": "//",
+          "end": "$",
+          "captures": {
+            "0": {
+              "name": "punctuation.definition.comment.gov"
+            }
+          }
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.gov",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.gov",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.gov",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.gov",
+          "match": "\\b(I_LOVE_GOVERNMENT|FOR_THE_PEOPLE|END_FOR_THE_PEOPLE|WHILE|END_WHILE|IF|THEN|ELSE|ELSE_IF|END_IF|DO)\\b"
+        },
+        {
+          "name": "keyword.other.gov",
+          "match": "\\b(PRAISE_LEADER|OBEY_PARTY_LINE|PLEASE|DECLARE_VARIABLE|SET|READ|INCREMENT|DENOUNCE_IMPERIALIST_ERRORS)\\b"
+        },
+        {
+          "name": "storage.type.gov",
+          "match": "\\b(AS|INTEGER|STRING|ARRAY_OF_STRING|SIZE)\\b"
+        },
+        {
+          "name": "keyword.operator.comparison.gov",
+          "match": "\\b(EQUALS|NOT_EQUALS|LESS_THAN|AND|OR)\\b"
+        },
+        {
+          "name": "keyword.other.gov",
+          "match": "\\b(TO|BY)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.gov",
+          "match": "[+\\-*/]"
+        },
+        {
+          "name": "punctuation.brackets.gov",
+          "match": "[\\[\\]()]"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "name": "variable.other.gov",
+          "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.gov"
+}

@@ -1,0 +1,52 @@
+!I_LOVE_GOVERNMENT
+
+PRAISE_LEADER "Welcome to the State-Approved Number Guessing Game!"
+PRAISE_LEADER "The party has chosen a secret number between 1 and 100"
+
+OBEY_PARTY_LINE "All variables serve the collective"
+PLEASE DECLARE_VARIABLE "SecretNumber" AS INTEGER
+PLEASE DECLARE_VARIABLE "Guess" AS INTEGER
+PLEASE DECLARE_VARIABLE "Attempts" AS INTEGER
+PLEASE DECLARE_VARIABLE "MaxAttempts" AS INTEGER
+PLEASE DECLARE_VARIABLE "GameWon" AS STRING
+
+// Set the secret number (in a real implementation, this would be random)
+PLEASE SET SecretNumber TO 42
+PLEASE SET Attempts TO 0
+PLEASE SET MaxAttempts TO 7
+PLEASE SET GameWon TO "no"
+
+PRAISE_LEADER "You have " + MaxAttempts + " attempts to guess the party's number!"
+
+WHILE Attempts LESS_THAN MaxAttempts AND GameWon EQUALS "no" DO
+    PLEASE INCREMENT Attempts BY 1
+    PRAISE_LEADER "Attempt " + Attempts + " of " + MaxAttempts
+    PRAISE_LEADER "Enter your guess, comrade:"
+    PLEASE READ Guess
+    
+    IF Guess EQUALS SecretNumber THEN
+        PRAISE_LEADER "Congratulations! You have served the state well!"
+        PRAISE_LEADER "The secret number was indeed " + SecretNumber
+        PRAISE_LEADER "You guessed it in " + Attempts + " attempts!"
+        PLEASE SET GameWon TO "yes"
+    ELSE
+        IF Guess LESS_THAN SecretNumber THEN
+            PRAISE_LEADER "The party says: Too low! Aim higher for the people!"
+        ELSE
+            PRAISE_LEADER "The state declares: Too high! Lower your expectations!"
+        END_IF
+        
+        IF Attempts LESS_THAN MaxAttempts THEN
+            PLEASE DECLARE_VARIABLE "RemainingAttempts" AS INTEGER
+            PLEASE SET RemainingAttempts TO MaxAttempts - Attempts
+            PRAISE_LEADER "You have " + RemainingAttempts + " attempts remaining"
+        END_IF
+    END_IF
+END_WHILE
+
+IF GameWon EQUALS "no" THEN
+    PRAISE_LEADER "The game is over! The state's number remains secret!"
+    PRAISE_LEADER "The answer was " + SecretNumber + ". Better luck serving the people next time!"
+END_IF
+
+PRAISE_LEADER "Thank you for participating in state-approved entertainment!"

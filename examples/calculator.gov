@@ -1,0 +1,53 @@
+!I_LOVE_GOVERNMENT
+
+PRAISE_LEADER "Welcome to the Great Calculator!"
+PRAISE_LEADER "All calculations serve the state!"
+
+OBEY_PARTY_LINE "Variables for the glorious computation"
+PLEASE DECLARE_VARIABLE "FirstNumber" AS INTEGER
+PLEASE DECLARE_VARIABLE "SecondNumber" AS INTEGER
+PLEASE DECLARE_VARIABLE "Operation" AS STRING
+PLEASE DECLARE_VARIABLE "Result" AS INTEGER
+PLEASE DECLARE_VARIABLE "Continue" AS STRING
+
+PLEASE SET Continue TO "yes"
+
+WHILE Continue EQUALS "yes" DO
+    PRAISE_LEADER "Enter first number for the state:"
+    PLEASE READ FirstNumber
+    
+    PRAISE_LEADER "Enter second number for the people:"
+    PLEASE READ SecondNumber
+    
+    PRAISE_LEADER "Choose operation (+, -, *, /):"
+    PLEASE READ Operation
+    
+    IF Operation EQUALS "+" THEN
+        PLEASE SET Result TO FirstNumber + SecondNumber
+        PRAISE_LEADER "Addition completed for the state!"
+        PRAISE_LEADER Result
+    ELSE_IF Operation EQUALS "-" THEN
+        PLEASE SET Result TO FirstNumber - SecondNumber
+        PRAISE_LEADER "Subtraction completed for the party!"
+        PRAISE_LEADER Result
+    ELSE_IF Operation EQUALS "*" THEN
+        PLEASE SET Result TO FirstNumber * SecondNumber
+        PRAISE_LEADER "Multiplication completed for the people!"
+        PRAISE_LEADER Result
+    ELSE_IF Operation EQUALS "/" THEN
+        IF SecondNumber NOT_EQUALS 0 THEN
+            PLEASE SET Result TO FirstNumber / SecondNumber
+            PRAISE_LEADER "Division completed by supreme calculation!"
+            PRAISE_LEADER Result
+        ELSE
+            PRAISE_LEADER "Division by zero is counter-revolutionary!"
+        END_IF
+    ELSE
+        PRAISE_LEADER "Invalid operation! The state does not recognize this!"
+    END_IF
+    
+    PRAISE_LEADER "Continue calculating for the people? (yes/no):"
+    PLEASE READ Continue
+END_WHILE
+
+PRAISE_LEADER "Thank you for serving the mathematical needs of the state!"
